@@ -5,7 +5,6 @@ import MessageInput from './MessageInput';
 
 const styles = theme => ({
   chatLayout: {
-    value: 'dark',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
