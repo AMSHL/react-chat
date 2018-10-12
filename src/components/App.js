@@ -1,13 +1,11 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import { withStyles } from '@material-ui/core/styles';
-import Sidebar from './Sidebar';
-import ChatHeader from './ChatHeader';
-import Chat from './Chat';
-import { chats, messages } from '../mock-data';
+import WelcomePage from './WelcomePage';
+import ChatPage from './ChatPage';
 
 const styles = theme => ({
   root: {
-    value: 'dark',
     position: 'relative',
     display: 'flex',
     width: '100%',
@@ -16,12 +14,16 @@ const styles = theme => ({
   },
 });
 
-const App =({ classes }) => (
-  <div className={classes.root}>
-    <ChatHeader />
-    <Sidebar chats={chats} />
-    <Chat messages={messages}/>
-  </div>
+const App = ({ classes }) => (
+  <Router>
+    <div className={classes.root}>
+      <Switch>
+        <Route exact path="/(welcome)?" component={WelcomePage} />
+        <Route path="/chat" component={ChatPage} />
+        <Redirect to="/" />
+      </Switch>
+    </div>
+  </Router>
 );
 
 export default withStyles(styles)(App);
