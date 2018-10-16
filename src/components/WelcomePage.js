@@ -10,6 +10,7 @@ import Tab from '@material-ui/core/Tab';
 import LoginForm from './LoginForm';
 import SignupForm from './SignupForm2';
 import BrandName from './BrandName';
+import { Redirect } from 'react-router-dom'
 
 const styles = theme => ({
   paper: {
@@ -31,9 +32,14 @@ class WelcomePage extends React.Component {
   }
 
   render() {
-    const { classes } = this.props;
+    const { classes, signup, login, isAuthenticated } = this.props;
     const { activeTab } = this.state;
 
+    if (isAuthenticated){
+      return (
+        <Redirect to="/chat"/>
+      );
+    }
     return (
       <React.Fragment>
         <AppBar>
@@ -57,8 +63,8 @@ class WelcomePage extends React.Component {
                 </Tabs>
               </AppBar>
               <div className={classes.tabContent}>
-                {activeTab === 0 && <LoginForm />}
-                {activeTab === 1 && <SignupForm />}
+                {activeTab === 0 && <LoginForm onSubmit={login}/>}
+                {activeTab === 1 && <SignupForm onSubmit={signup}/>}
               </div>
             </Paper>
           </Grid>
