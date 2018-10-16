@@ -109,7 +109,7 @@ class SignupForm extends React.Component {
         />
         <Button
           fullWidth
-          variant="raised"
+          variant="containd"
           type="submit"
           color="primary"
           className={classes.signUpButton}
