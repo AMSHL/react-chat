@@ -2,7 +2,6 @@ import {
   SIGNUP_REQUEST, SIGNUP_SUCCESS, SIGNUP_FAILURE,
   LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE,
   LOGOUT_REQUEST,
-//  LOGOUT_SUCCESS, LOGOUT_FAILURE
 } from '../constants'
 import fetch from "isomorphic-fetch";
 

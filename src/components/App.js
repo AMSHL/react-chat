@@ -6,6 +6,7 @@ import ChatPage from '../containers/ChatPage';
 import {Provider} from 'react-redux'
 import configureStore from '../store';
 
+
 const styles = theme => ({
   root: {
     position: 'relative',
@@ -19,7 +20,9 @@ const styles = theme => ({
 const store = configureStore();
 
 const App = ({ classes }) => (
-  <Provider store={store}>
+  
+
+ <Provider store={store}>
     <Router>
       <div className={classes.root}>
         <Switch>
