@@ -22,7 +22,7 @@ const store = configureStore();
 const App = ({ classes }) => (
   
 
- <Provider store={store}>
+  <Provider store={store}>
     <Router>
       <div className={classes.root}>
         <Switch>
