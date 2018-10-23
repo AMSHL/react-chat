@@ -13,12 +13,28 @@ const theme = createMuiTheme({
   }
 });
 
+const rootEl =   document.getElementById('root');
+ 
 ReactDOM.render(
   <MuiThemeProvider theme={theme}>
     <App />
-  </ MuiThemeProvider>,
+  </MuiThemeProvider>, 
+  rootEl);
 
-  document.getElementById('root')
-);
+
+if (module.hot) {
+  module.hot.accept('./components/App', () => {
+    ReactDOM.render(
+      <MuiThemeProvider theme={theme}>
+        <App />
+      </MuiThemeProvider>,
+      rootEl);
+  })
+}
 
 registerServiceWorker();
+
+
+
+
+

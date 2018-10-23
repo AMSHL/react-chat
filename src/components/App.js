@@ -1,10 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import WelcomePage from '../containers/WelcomePage';
 import ChatPage from '../containers/ChatPage';
 import {Provider} from 'react-redux'
 import configureStore from '../store';
+import PrivateRoute from '../containers/PrivateRoute';
+import history from '../utils/history';
 
 
 const styles = theme => ({
@@ -23,11 +25,11 @@ const App = ({ classes }) => (
   
 
   <Provider store={store}>
-    <Router>
+    <Router history={history}>
       <div className={classes.root}>
         <Switch>
           <Route exact path="/(welcome)?" component={WelcomePage} />
-          <Route path="/chat" component={ChatPage} />
+          <PrivateRoute path="/chat" component={ChatPage} />
           <Redirect to="/" />
         </Switch>
       </div>
