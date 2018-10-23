@@ -3,8 +3,6 @@ import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import WelcomePage from '../containers/WelcomePage';
 import ChatPage from '../containers/ChatPage';
-import {Provider} from 'react-redux'
-import configureStore from '../store';
 import PrivateRoute from '../containers/PrivateRoute';
 import history from '../utils/history';
 
@@ -19,12 +17,9 @@ const styles = theme => ({
   },
 });
 
-const store = configureStore();
-
 const App = ({ classes }) => (
   
 
-  <Provider store={store}>
     <Router history={history}>
       <div className={classes.root}>
         <Switch>
@@ -34,7 +29,6 @@ const App = ({ classes }) => (
         </Switch>
       </div>
     </Router>
-  </Provider>
 );
 
 export default withStyles(styles)(App);
