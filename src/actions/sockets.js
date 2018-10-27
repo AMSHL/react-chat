@@ -5,7 +5,9 @@ import { redirect } from './services';
 export function missingSocketConnection() {
   return {
     type: types.SOCKETS_CONNECTION_MISSING,
-  }
+    payload: new Error('Socket connection error!'),
+
+  };
 }
 
 let socket = null;
@@ -18,7 +20,7 @@ export function socketsConnect() {
       type: types.SOCKETS_CONNECTION_REQUEST,
     });
 
-    socket = SocketIOClient('ws://lockalhost:8000/', {
+    socket = SocketIOClient('ws://localhost:8000/', {
       query: { token }
     });
 
