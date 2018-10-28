@@ -28,7 +28,7 @@ const ChatList = ({ classes, chats, activeChat }) => (
         />
       ))
     ) : (
-      <Typography variant="subheading" className={classes.noChats}>
+      <Typography variant="subtitle1" className={classes.noChats}>
         There is no chats yet
       </Typography>
     )}

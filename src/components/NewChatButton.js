@@ -94,7 +94,7 @@ class NewChatButton extends React.Component {
           onClose={this.toggleModal}
         >
           <Paper className={classes.modal}>
-            <Typography variant="title" id="modal-title">
+            <Typography variant="h6" id="modal-title">
               Create new chat
             </Typography>
             <TextField

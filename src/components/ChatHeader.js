@@ -34,7 +34,7 @@ class ChatHeader extends React.Component {
               <Avatar colorFrom={activeChat._id}>
                 {activeChat.title}
               </Avatar>
-              <Typography variant="title" className={classes.appBarTitle}>
+              <Typography variant="h6" className={classes.appBarTitle}>
                 {activeChat.title}
                 <ChatMenu
                   activeUser={activeUser}
@@ -44,7 +44,7 @@ class ChatHeader extends React.Component {
               </Typography>
             </React.Fragment>
           ) : (
-            <Typography variant="title" className={classes.appBarTitle}>
+            <Typography variant="h6" className={classes.appBarTitle}>
               DogeCodes React Chat
             </Typography>
           )}

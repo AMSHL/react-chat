@@ -40,7 +40,7 @@ class ChatMessageList extends React.Component {
     if (!match.params.chatId) {
       return (
         <Paper className={classes.paper}>
-          <Typography variant="display1" gutterBottom>
+          <Typography variant="h4" gutterBottom>
             No messages yet!
           </Typography>
           <Typography variant="body1" gutterBottom>
@@ -64,7 +64,7 @@ class ChatMessageList extends React.Component {
         ))}
       </div>
     ) : (
-      <Typography variant="display1">
+      <Typography variant="h4">
         no one writes to the colonel...
       </Typography>
     );
