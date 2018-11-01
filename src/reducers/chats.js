@@ -72,6 +72,7 @@ const byIds = (state = initialState.byIds, action) => {
     case types.JOIN_CHAT_SUCCESS:
     case types.LEAVE_CHAT_SUCCESS:
     case types.RECIEVE_NEW_CHAT:
+    
       return {
         ...state,
         [getChatId(action.payload.chat)]: action.payload.chat,
@@ -94,6 +95,6 @@ export default combineReducers({
   byIds,
 });
 
-export const getChatId = chat => chat._id;
+export const getChatId = (chat) => chat._id;
 export const getById = (state, id) => state.byIds[id];
 export const getByIds = (state, ids) => ids.map(id => getById(state, id));

@@ -7,6 +7,7 @@ import * as fromChats from '../reducers/chats';
 import * as fromState from '../reducers';
 import ChatPage from '../components/ChatPage';
 import { sendMessage, mountChat, unmountChat, socketsConnect } from '../actions/sockets';
+
 const mapStateToProps = state => {
   const activeChat = fromChats.getById(state.chats, state.chats.activeId);
 
