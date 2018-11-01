@@ -6,7 +6,6 @@ import ChatPage from '../containers/ChatPage';
 import PrivateRoute from '../containers/PrivateRoute';
 import history from '../utils/history';
 
-
 const styles = theme => ({
   root: {
     position: 'relative',

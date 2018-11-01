@@ -75,12 +75,13 @@ class NewChatButton extends React.Component {
   }
 
   render() {
-    const { classes } = this.props;
+    const { classes, disabled } = this.props;
     const { open, title } = this.state;
 
     return (
       <React.Fragment>
         <Button
+          disabled={disabled}
           variant="fab"
           color="primary"
           className={classes.newChatButton}
@@ -94,7 +95,7 @@ class NewChatButton extends React.Component {
           onClose={this.toggleModal}
         >
           <Paper className={classes.modal}>
-            <Typography variant="title" id="modal-title">
+            <Typography variant="h6" id="modal-title">
               Create new chat
             </Typography>
             <TextField

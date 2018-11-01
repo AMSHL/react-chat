@@ -9,7 +9,8 @@ import Tab from '@material-ui/core/Tab';
 import LoginForm from './LoginForm';
 import SignupForm from './SignupForm2';
 import BrandName from './BrandName';
-import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom';
+import ErrorMessage from './ErrorMessage';
 
 const styles = theme => ({
   paper: {
@@ -31,7 +32,7 @@ class WelcomePage extends React.Component {
   }
 
   render() {
-    const { classes, signup, login, isAuthenticated } = this.props;
+    const { classes, signup, login, isAuthenticated, error } = this.props;
     const { activeTab } = this.state;
 
     if (isAuthenticated){
@@ -66,6 +67,7 @@ class WelcomePage extends React.Component {
             </Paper>
           </Grid>
         </Grid>
+        <ErrorMessage error={error} />
       </React.Fragment>
     );
   }
