@@ -1,17 +1,19 @@
+/* eslint no-underscore-dangle: 0 */
+
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-//import BrandName from './BrandName';
-import Avatar from './Avatar';
+// import BrandName from './BrandName';
 import Typography from '@material-ui/core/Typography';
+import Avatar from './Avatar';
 import ChatMenu from './ChatMenu';
 import UserMenu from './UserMenu';
 
 const styles = theme => ({
   appBar: {
     position: 'fixed',
-    width: `calc(100% - 320px)`,
+    width: 'calc(100% - 320px)',
     marginLeft: 320,
   },
   appBarTitle: {
@@ -24,7 +26,9 @@ const styles = theme => ({
 
 class ChatHeader extends React.Component {
   render() {
-    const { classes, activeUser, activeChat, logout, leaveChat, deleteChat, editUser, isConnected } = this.props;
+    const {
+      classes, activeUser, activeChat, logout, leaveChat, deleteChat, editUser, isConnected,
+    } = this.props;
 
     return (
       <AppBar color="primary" className={classes.appBar}>
@@ -49,7 +53,7 @@ class ChatHeader extends React.Component {
               DogeCodes React Chat
             </Typography>
           )}
-          <UserMenu   
+          <UserMenu
             disabled={!isConnected}
             activeUser={activeUser}
             onLogoutClick={logout}
@@ -59,6 +63,6 @@ class ChatHeader extends React.Component {
       </AppBar>
     );
   }
-};
+}
 
 export default withStyles(styles)(ChatHeader);

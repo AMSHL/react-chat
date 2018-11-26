@@ -9,10 +9,12 @@ import Avatar from './Avatar';
 const styles = theme => ({
   activeItem: {
     backgroundColor: theme.palette.grey[200],
-  }
+  },
 });
 
-const ChatListItem = ({ classes, disabled, title, chatId, active, createdAt }) => (
+const ChatListItem = ({
+  classes, disabled, title, chatId, active, createdAt,
+}) => (
   <ListItem
     button
     component={Link}
@@ -21,7 +23,7 @@ const ChatListItem = ({ classes, disabled, title, chatId, active, createdAt }) =
     disabled={disabled}
   >
     <Avatar colorFrom={chatId}>{title}</Avatar>
-    <ListItemText primary={title} secondary={moment(createdAt).fromNow()}/>
+    <ListItemText primary={title} secondary={moment(createdAt).fromNow()} />
   </ListItem>
 );
 

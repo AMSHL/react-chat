@@ -11,11 +11,11 @@ export function editUser({ username, firstName, lastName }) {
       return Promise.resolve();
     }
     dispatch({
-      type: types.EDIT_USER_REQUEST
-    })
+      type: types.EDIT_USER_REQUEST,
+    });
 
     return callApi('/users/me', token, { method: 'POST' }, {
-      data: { username, firstName, lastName }
+      data: { username, firstName, lastName },
     })
       .then(json => dispatch({
         type: types.EDIT_USER_SUCCESS,

@@ -1,8 +1,10 @@
+/* eslint no-underscore-dangle: 0 */
+
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
-import ChatListItem from './ChatListItem';
 import Typography from '@material-ui/core/Typography/Typography';
+import ChatListItem from './ChatListItem';
 
 const styles = theme => ({
   chatsList: {
@@ -11,15 +13,17 @@ const styles = theme => ({
     value: 'dark',
     noChats: {
       textAlign: 'center',
-    }
-  
+    },
+
   },
 });
 
-const ChatList = ({ classes, chats, activeChat, disabled }) => (
+const ChatList = ({
+  classes, chats, activeChat, disabled,
+}) => (
   <List className={classes.chatsList}>
     {chats && chats.length ? (
-      chats.map((chat) => (
+      chats.map(chat => (
         <ChatListItem
           disabled={disabled}
           key={chat._id}

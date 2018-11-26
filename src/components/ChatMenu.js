@@ -56,9 +56,8 @@ class ChatMenu extends React.Component {
           {activeUser.isCreator && <MenuItem onClick={this.handleDeleteClick}>Delete</MenuItem>}
         </Menu>
       </React.Fragment>
-    )
+    );
   }
 }
 
 export default ChatMenu;
-

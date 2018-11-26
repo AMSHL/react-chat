@@ -14,15 +14,16 @@ class ErrorMessage extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.error) {
-      this.setState({open: true});
+      this.setState({ open: true });
     }
   }
+
   render() {
     const { error } = this.props;
-    if(!error) {
+    if (!error) {
       return null;
     }
-    
+
     return (
       <Snackbar
         anchorOrigin={{
@@ -34,14 +35,14 @@ class ErrorMessage extends React.Component {
         onClose={this.handleCloseSnackBar}
         message={<span>{error.message}</span>}
         action={[
-            
+
           <IconButton
             key="close"
             aria-label="Close"
             color="inherit"
             onClick={this.handleCloseSnackBar}
           >
-          <CloseIcon />
+            <CloseIcon />
           </IconButton>,
         ]}
       />

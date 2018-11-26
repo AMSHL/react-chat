@@ -6,10 +6,10 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import { Redirect } from 'react-router-dom';
 import LoginForm from './LoginForm';
 import SignupForm from './SignupForm2';
 import BrandName from './BrandName';
-import { Redirect } from 'react-router-dom';
 import ErrorMessage from './ErrorMessage';
 
 const styles = theme => ({
@@ -19,8 +19,8 @@ const styles = theme => ({
   },
   tabContent: {
     padding: theme.spacing.unit * 3,
-  }
-})
+  },
+});
 
 class WelcomePage extends React.Component {
   state = {
@@ -32,19 +32,21 @@ class WelcomePage extends React.Component {
   }
 
   render() {
-    const { classes, signup, login, isAuthenticated, error } = this.props;
+    const {
+      classes, signup, login, isAuthenticated, error,
+    } = this.props;
     const { activeTab } = this.state;
 
-    if (isAuthenticated){
+    if (isAuthenticated) {
       return (
-        <Redirect to="/chat"/>
+        <Redirect to="/chat" />
       );
     }
     return (
       <React.Fragment>
         <AppBar>
           <Toolbar>
-           <BrandName />
+            <BrandName />
           </Toolbar>
         </AppBar>
         <Grid container justify="center">
@@ -61,8 +63,8 @@ class WelcomePage extends React.Component {
                 </Tabs>
               </AppBar>
               <div className={classes.tabContent}>
-                {activeTab === 0 && <LoginForm onSubmit={login}/>}
-                {activeTab === 1 && <SignupForm onSubmit={signup}/>}
+                {activeTab === 0 && <LoginForm onSubmit={login} />}
+                {activeTab === 1 && <SignupForm onSubmit={signup} />}
               </div>
             </Paper>
           </Grid>

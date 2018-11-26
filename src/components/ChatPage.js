@@ -7,15 +7,17 @@ import ErrorMessage from './ErrorMessage';
 
 class ChatPage extends React.Component {
   componentDidMount() {
-    const { match, fetchAllChats, fetchMyChats, setActiveChat, socketsConnect, mountChat } = this.props;
-    
+    const {
+      match, fetchAllChats, fetchMyChats, setActiveChat, socketsConnect, mountChat,
+    } = this.props;
+
     Promise.all([
       fetchAllChats(),
       fetchMyChats(),
     ])
-    .then(() => {
-      socketsConnect();
-    })
+      .then(() => {
+        socketsConnect();
+      })
       .then(() => {
         const { chatId } = match.params;
         if (chatId) {
@@ -26,7 +28,9 @@ class ChatPage extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { match: { params }, setActiveChat, unmountChat, mountChat } = this.props;
+    const {
+      match: { params }, setActiveChat, unmountChat, mountChat,
+    } = this.props;
     const { params: nextParams } = nextProps.match;
 
     if (nextParams.chatId && params.chatId !== nextParams.chatId) {

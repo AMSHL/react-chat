@@ -1,5 +1,7 @@
 import React from 'react';
-import { Router, Route, Switch, Redirect } from 'react-router-dom';
+import {
+  Router, Route, Switch, Redirect,
+} from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import WelcomePage from '../containers/WelcomePage';
 import ChatPage from '../containers/ChatPage';
@@ -17,17 +19,17 @@ const styles = theme => ({
 });
 
 const App = ({ classes }) => (
-  
 
-    <Router history={history}>
-      <div className={classes.root}>
-        <Switch>
-          <Route exact path="/(welcome)?" component={WelcomePage} />
-          <PrivateRoute path="/chat/:chatId?" component={ChatPage} />
-          <Redirect to="/" />
-        </Switch>
-      </div>
-    </Router>
+
+  <Router history={history}>
+    <div className={classes.root}>
+      <Switch>
+        <Route exact path="/(welcome)?" component={WelcomePage} />
+        <PrivateRoute path="/chat/:chatId?" component={ChatPage} />
+        <Redirect to="/" />
+      </Switch>
+    </div>
+  </Router>
 );
 
 export default withStyles(styles)(App);

@@ -9,12 +9,12 @@ const drawerWidth = 320;
 
 const styles = theme => ({
   messageInputWrapper: {
-    height:75,
-    width: `calc(100% - ${drawerWidth+50}px)`,
-    position: "fixed",
-    bottom: 0
+    height: 75,
+    width: `calc(100% - ${drawerWidth + 50}px)`,
+    position: 'fixed',
+    bottom: 0,
   },
-  inputMessage : {
+  inputMessage: {
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
@@ -24,7 +24,7 @@ const styles = theme => ({
 
 class InputMessage extends React.Component {
   state = {
-    value: ''
+    value: '',
   }
 
   handleValueChange = (event) => {
@@ -38,18 +38,20 @@ class InputMessage extends React.Component {
     if (event.key === 'Enter' && value) {
       this.props.sendMessage(value);
       this.setState({
-        value: ''
+        value: '',
       });
     }
   }
 
-  render () {
-    const { classes, showJoinButton, onJoinButtonClick, disabled } = this.props;
+  render() {
+    const {
+      classes, showJoinButton, onJoinButtonClick, disabled,
+    } = this.props;
 
     return (
       <div className={classes.messageInputWrapper}>
-        <Paper className={classes.inputMessage}  elevation={5}>
-          {showJoinButton 
+        <Paper className={classes.inputMessage} elevation={5}>
+          {showJoinButton
             ? (
               <Button
                 disabled={disabled}
@@ -62,7 +64,7 @@ class InputMessage extends React.Component {
               </Button>
             )
             : (
-              <Input 
+              <Input
                 placeholder="Type your message..."
                 fullWidth
                 disabled={disabled}

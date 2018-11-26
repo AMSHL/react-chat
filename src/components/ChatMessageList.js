@@ -1,9 +1,11 @@
+/* eslint no-underscore-dangle: 0 */
+
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import ChatMessage from './ChatMessage';
 import Typography from '@material-ui/core/Typography/Typography';
 import { withRouter } from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
+import ChatMessage from './ChatMessage';
 
 const styles = theme => ({
   messagesWrapper: {
@@ -14,8 +16,8 @@ const styles = theme => ({
     paddingBottom: '120px',
   },
   paper: {
-    padding: theme.spacing.unit * 3
-  }
+    padding: theme.spacing.unit * 3,
+  },
 });
 
 class ChatMessageList extends React.Component {
@@ -35,7 +37,9 @@ class ChatMessageList extends React.Component {
   }
 
   render() {
-    const { classes, messages, match, activeUser } = this.props;
+    const {
+      classes, messages, match, activeUser,
+    } = this.props;
 
     if (!match.params.chatId) {
       return (

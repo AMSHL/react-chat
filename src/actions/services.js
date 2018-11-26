@@ -8,5 +8,5 @@ export function redirect(to) {
       type: types.REDIRECT,
       payload: { to },
     });
-  }
+  };
 }
